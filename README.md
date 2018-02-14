@@ -1,4 +1,4 @@
-#Social Service Club(Admin Panel)
+# Social Service Club(Admin Panel)
 Social Service Club admin panel allows to post and manage new events.
 It also allows to add new members and manage them.
 
