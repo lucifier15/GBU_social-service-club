@@ -1,4 +1,8 @@
-# Angularapp
+#Social Service Club(Admin Panel)
+Social Service Club admin panel allows to post and manage new events.
+It also allows to add new members and manage them.
+
+# Social Service Club
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
 
