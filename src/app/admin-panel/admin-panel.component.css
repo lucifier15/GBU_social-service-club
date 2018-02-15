@@ -1,0 +1,22 @@
+.sidenav-container {
+	height: 560px;
+	z-index: 1000;
+}
+
+mat-sidenav{
+	/*border: 1px solid #111;*/
+	width: 150px;
+	overflow: hidden;
+}
+
+mat-sidenav button{
+	width: 150px;
+}
+
+mat-sidenav-content{
+	padding: 30px;
+}
+
+mat-card{
+	margin-bottom: 20px;
+}

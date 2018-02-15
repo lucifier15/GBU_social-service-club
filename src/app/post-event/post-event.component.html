@@ -1,0 +1,31 @@
+		<div class="col-md-4" *ngFor="let event of events">
+			<mat-card>
+				<h4>{{event.title}}</h4>
+				<p>Date: {{event.date}}</p>
+				<p>Venue: {{event.venue}}</p>
+			</mat-card>
+		</div>
+		
+
+		<div class="col-md-12" id="eventForm">
+			<div>
+				<h4>Post New Event</h4>
+			</div>
+			<div class="col-md-4">
+				<form (ngSubmit)="onSubmit(e)" #e="ngForm">
+					<div class="form-group">
+						<label>Event Tile</label>
+						<input class="form-control" type="text" name="title" placeholder="EVENT TITLE" ngModel>
+					</div>
+					<div class="form-group">
+						<label>Event Date</label>
+						<input class="form-control" type="date" name="date" ngModel>
+					</div>
+					<div class="form-group">
+						<label>Venue</label>
+						<input class="form-control" type="text" name="venue" placeholder="VENUE" ngModel>
+					</div>
+					<button mat-raised-button color="primary">Post</button>
+				</form>
+			</div>
+		</div>

@@ -1,0 +1,36 @@
+<div class="members">
+
+	<div class="col-md-12 row">
+
+		<div class="col-md-4" *ngFor="let member of members">
+			<mat-card >
+				<h4>{{member.post}}</h4>
+				<p>{{member.name}}</p>
+				<p>{{member.roll_no}}</p>
+			</mat-card>
+		</div>
+		
+	</div>
+	<div class="col-md-6 row" id="addForm">
+		<div>
+		<h4>Add A Member</h4>
+		</div>
+		<div>
+			<form (ngSubmit)="onSubmit(m)" #m="ngForm">
+				<div class="form-group">
+					<input type="text" name="name" placeholder="Full Name" ngModel class="form-control">
+				</div>
+				<div class="form-group">
+					<input type="text" name="roll_no" placeholder="Registration No" ngModel class="form-control">
+				</div>
+				<div class="form-group">
+					<select name="post" ngModel>
+						<option value="gs">G.S.</option>
+						<option value="manager">Manager</option>
+					</select>
+				</div>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
