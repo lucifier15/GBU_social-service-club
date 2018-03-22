@@ -3,6 +3,7 @@ import {MatInputModule} from '@angular/material/input';
 import { EventsService } from '../services/events.service';
 import { Events } from '../../interfaces.interface';
 import { ActivatedRoute } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-event',
@@ -28,6 +29,14 @@ export class EventComponent implements OnInit {
   		(error: Response) => console.log(error)
   	);
     
+  }
+
+  onSubmit(form: NgForm){
+    this.eventsService.register(form.value.name, form.value.roll_no, form.value.phone, form.value.email, form.value.otp, this.id)
+    .subscribe(
+      response => console.log(response),
+      error => console.log(error)
+    );
   }
 
   ngOnDestroy() {
