@@ -1,0 +1,10 @@
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+h3{
+	padding: 15px;
+}
+.event{
+	margin-bottom: 20px;
+}
+agm-map {
+  height: 300px;
+}

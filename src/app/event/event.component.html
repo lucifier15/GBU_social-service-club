@@ -1,0 +1,54 @@
+<!-- event starts -->
+	<div class="container row event" *ngFor="let event of event">
+		<div class="container">
+			<h4>{{event.title}}{{event.date}}{{event.venue}}</h4>
+
+		</div>
+		<div class="col-md-1"></div>	
+		<div class="col-md-7">
+			<div>
+				<h4>Guidelines & Rules</h4>
+			</div>
+			<div>
+				<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div>
+				<h4>Register Here{{event.id}}</h4>
+			</div>
+			<div class="rgForm">
+				<form>
+					<div class="form-group">
+						<input class="form-control" type="text" name="name" placeholder="FULL NAME">
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" name="roll_no" placeholder="REGISTARTION NO">
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" name="phone" placeholder="CONTACT NO">
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="email" name="email" placeholder="E-MAIL">
+						<small style="color: blue;" (click)="sendOtp()">Send Otp</small>
+					</div>
+					<div class="form-group">
+						<input class="form-control" type="text" name="otp" placeholder="ENTER OTP">
+					</div>
+					<button>SUBMIT</button>
+				</form>
+			</div>
+		</div>
+	</div>
+<!-- event ends -->

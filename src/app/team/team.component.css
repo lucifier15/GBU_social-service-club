@@ -1,0 +1,22 @@
+.team_member{
+	margin-top: 40px;
+}
+
+.team_member img{
+	height: 200px !important;
+	align-content: center;
+}
+
+h3{
+	text-align: center;
+}
+
+h4{
+	text-align: center;
+	text-transform: uppercase;
+}
+
+p{
+	text-align: center;
+	text-transform: uppercase;
+}

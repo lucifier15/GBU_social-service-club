@@ -1,0 +1,9 @@
+.navbar-default{
+	background: #031217;
+	border-radius: 0px;
+	padding: 8px;
+}
+
+.navbar-default a{
+	color: #fff;
+}

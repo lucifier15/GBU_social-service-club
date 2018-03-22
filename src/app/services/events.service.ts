@@ -21,4 +21,13 @@ export class EventsService{
 			}
 		);
 	}
+
+	getEvent(id: number){
+		return this.http.get('http://127.0.0.1:8000/api/getEvent/'+id)
+		.map(
+			(response: Response) => {
+				return response.json().event;
+			}
+		);
+	}
 }

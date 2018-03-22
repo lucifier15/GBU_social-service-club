@@ -1,6 +1,10 @@
 .footer{
-	background: grey;
+	background: #031217;
+	width: 100%;
+	margin-top: 20px;
 }
 .footer p{
 	text-align: center;
+	color: #fff;
+	padding: 5px;
 }

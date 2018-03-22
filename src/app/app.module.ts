@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { routes } from './app.router';
 import { HttpModule } from '@angular/http';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { AdminPanelComponent } from './admin-panel/admin-panel.component';
@@ -19,6 +20,10 @@ import { MembersComponent } from './members/members.component';
 import { PostEventComponent } from './post-event/post-event.component';
 import { MembersService } from './services/members.service';
 import { EventsService } from './services/events.service';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { EventComponent } from './event/event.component';
+import { AboutComponent } from './about/about.component';
+import { TeamComponent } from './team/team.component';
 
 
 @NgModule({
@@ -28,7 +33,11 @@ import { EventsService } from './services/events.service';
     HeaderComponent,
     FooterComponent,
     MembersComponent,
-    PostEventComponent
+    PostEventComponent,
+    WelcomeComponent,
+    EventComponent,
+    AboutComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +50,10 @@ import { EventsService } from './services/events.service';
     MatFormFieldModule,
     MatInputModule,
     routes,
-    HttpModule
+    HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCAmVhCo-OGZoLMWBlXKSRFRZmCA81lcs0'
+    })
   ],
   providers: [
     MembersService,

@@ -1,0 +1,68 @@
+<!-- upcoming events start -->
+<div class="container">
+	<div>
+	<h3>Upcoming Events</h3>
+	</div>
+	<div>
+		<div class="col-md-4" *ngFor="let event of events">
+			<a [routerLink]="['event',event.id]">
+				<mat-card class="event" (click)="getEvent()">
+					<h4>{{event.title}}</h4>
+					<p>{{event.date}}</p>
+					<p>{{event.venue}}</p>
+					<p>{{event.id}}</p>
+				</mat-card>
+			</a>
+		</div>
+	</div>
+</div>
+
+<!-- upcoming events end -->
+
+<!-- past event starts -->
+<div class="container">
+	<div>
+		<h3>Past Events</h3>
+	</div>
+	<div>
+		<div class="col-md-4">
+			<h2>No Events Found!!</h2>
+		</div>
+	</div>
+</div>
+
+<!-- past events end -->
+
+<!-- contact starts -->
+	<div class="container" id="contact">
+		<div>
+			<h3>Contact Us</h3>
+		</div>
+		<div class="col-md-8">
+			<agm-map [latitude]="lat" [longitude]="lng">
+			  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+			</agm-map>
+		</div>
+		<div class="col-md-4 container">
+			<form>
+				<div class="form-group">
+					<label for="name">Name</label><br>
+					<input class="from-control" type="text" name="name" placeholder="Full Name" required>
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label><br>
+					<input class="from-control" type="email" name="email" placeholder="E-Mail" required>
+				</div>
+				<div class="form-group">
+					<label for="phone">Contact No</label><br>
+					<input class="from-control" type="number" name="phone" placeholder="Contact No" required>
+				</div>
+				<div class="form-group">
+					<label for="message">Message</label><br>
+					<!-- <input class="from-control" type="text" name="message" placeholder="Message" required> -->
+					<textarea class="from-control" name="message" placeholder="Message" required=""></textarea>
+				</div>
+			</form>
+		</div>
+	</div>
+<!-- contact ends -->
