@@ -1,0 +1,27 @@
+<!-- participants list start -->
+		<div class="container">
+			<router-outlet>
+				<div>
+					<h4>Event : Painting</h4>
+					<table>
+						<tr>
+							<th>S.No</th>
+							<th>Name</th>
+							<th>Registration No</th>
+							<th>Email</th>
+							<th>Contact No</th>
+							<th>Event Id</th>
+						</tr>
+						<tr *ngFor="let part of participants">
+							<td>{{part.id}}.</td>
+							<td>{{part.name}}</td>
+							<td>{{part.roll_no}}</td>
+							<td>{{part.email}}</td>
+							<td>{{part.phone}}</td>
+							<td>{{part.eventId}}</td>
+						</tr>
+					</table>
+				</div>
+			</router-outlet>
+		</div>
+<!-- participants list end -->

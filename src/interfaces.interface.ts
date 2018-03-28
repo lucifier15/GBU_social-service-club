@@ -9,3 +9,14 @@ export interface Events{
 	date: string;
 	venue: string;
 }
+
+export interface Participants{
+	id: number;
+	name: string;
+	roll_no: string;
+	phone: number;
+	email: string;
+	event: string;
+	eventId: number;
+}
+

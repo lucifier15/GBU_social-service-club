@@ -31,22 +31,65 @@
 			<div class="rgForm">
 				<form (ngSubmit)="onSubmit(form)" #form="ngForm">
 					<div class="form-group">
-						<input class="form-control" type="text" name="name" placeholder="FULL NAME" ngModel>
+						<input class="form-control" type="text" name="name" placeholder="FULL NAME"required minlength="4" [(ngModel)]="form.name" #name="ngModel">
+					</div>
+					<!-- name validation -->
+					<div *ngIf="name.invalid && (name.dirty || name.touched)">
+					  <p *ngIf="name.errors.required">
+					    Name is required.
+					  </p>
+					  <p *ngIf="name.errors.minlength">
+					    Name must be at least 4 characters long.
+					  </p>
+					</div>
+
+					<div class="form-group">
+						<input class="form-control" type="text" name="roll_no" placeholder="REGISTARTION NO" required [(ngModel)]="form.roll_no" #roll_no="ngModel">
+					</div>
+					<!-- roll_no validation -->
+					<div *ngIf="roll_no.invalid && (roll_no.dirty || roll_no.touched)">
+						<p *ngIf="roll_no.errors.required">
+							Registration no is required
+						</p>
 					</div>
 					<div class="form-group">
-						<input class="form-control" type="text" name="roll_no" placeholder="REGISTARTION NO" ngModel>
+						<input class="form-control" type="text" name="phone" placeholder="CONTACT NO" [(ngModel)]="form.phone" #phone="ngModel" required minlength="10">
 					</div>
+					<!-- phone validation -->
+					<div *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+						<p *ngIf="phone.errors.required">
+							Contant no is required
+						</p>
+						<p *ngIf="phone.errors.minlength">
+							Enter a valid no
+						</p>
+					</div>
+
+
 					<div class="form-group">
-						<input class="form-control" type="text" name="phone" placeholder="CONTACT NO" ngModel>
+						<input class="form-control" type="email" name="email" placeholder="E-MAIL" [(ngModel)]="form.email" #email="ngModel" required>
+						<a style="color: blue;" (click)="sendOtp(email)">Send Otp</a>
 					</div>
+					<!-- email validation -->
+					<div *ngIf="email.invalid && (email.dirty || email.touched)">
+						<p *ngIf="email.errors.required">
+							email is required
+						</p>
+						<p *ngIf="email.errors.type">
+							Invalid email
+						</p>
+					</div>
+
 					<div class="form-group">
-						<input class="form-control" type="email" name="email" placeholder="E-MAIL" ngModel>
-						<small style="color: blue;" (click)="sendOtp()">Send Otp</small>
+						<input class="form-control" type="text" name="otp" placeholder="ENTER OTP" [(ngModel)]="form.otp" #otp="ngModel" required>
 					</div>
-					<div class="form-group">
-						<input class="form-control" type="text" name="otp" placeholder="ENTER OTP" ngModel>
+					<!-- otp validation -->
+					<div *ngIf="otp.invalid && (otp.dirty || otp.touched)">
+						<p *ngIf="otp.errors.required">
+							Otp is required
+						</p>
 					</div>
-					<button type="submit">SUBMIT</button>
+					<button type="submit" [(disabled)]="!form.valid" mat-button>Register</button>
 				</form>
 			</div>
 		</div>

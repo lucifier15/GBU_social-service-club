@@ -15,6 +15,8 @@ export class EventComponent implements OnInit {
 	event: Events[];
   id: number;
   private sub: any;
+  name : string;
+  otp: number;
   constructor(private eventsService: EventsService,private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -32,11 +34,25 @@ export class EventComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
+    
+    if(form.value.otp==this.otp){
     this.eventsService.register(form.value.name, form.value.roll_no, form.value.phone, form.value.email, form.value.otp, this.id)
     .subscribe(
       response => console.log(response),
       error => console.log(error)
     );
+    }
+    else{
+      console.log('invalid otp');
+    }
+  }
+
+  sendOtp(email){
+    this.eventsService.sendOtp(email.value)
+     .subscribe(
+        (otp: number) => this.otp = otp,
+        error => console.log(error)
+     );
   }
 
   ngOnDestroy() {

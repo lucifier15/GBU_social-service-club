@@ -1,4 +1,4 @@
-@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
 h3{
 	padding: 15px;
 }
@@ -7,4 +7,18 @@ h3{
 }
 agm-map {
   height: 300px;
+}
+
+.app{
+	background: #142132;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.app_info h2,p{
+	color: #fff !important;
+}
+
+p{
+	color: #111 !important;
 }

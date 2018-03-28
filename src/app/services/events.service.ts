@@ -31,9 +31,29 @@ export class EventsService{
 		);
 	}
 
-	register(name: string,roll_no: string,phone: string,email: string,otp: string,eventId: string){
+	register(name: string,roll_no: string,phone: string,email: string,otp: string,eventId: number){
 		return this.http.post('http://127.0.0.1:8000/api/register',
 		{name: name,roll_no: roll_no,phone: phone,email: email,otp: otp,eventId: eventId},
 		{headers: new Headers({'X-Requested-With': 'XMLHttpRequest'})});
+	}
+
+	getPartList(){
+		return this.http.get('http://127.0.0.1:8000/api/getPartList')
+		.map(
+			(response: Response) =>	{
+				return response.json().participants;
+			}
+		);
+	}
+
+	sendOtp(email: string){
+		return this.http.post('http://127.0.0.1:8000/api/sendOtp',
+		{email: email},
+		{headers: new Headers({'X-Requested-With':'XMLHttpRequest'})})
+		.map(
+			(response: Response) => {
+				return response.json().otp;
+			}
+		);
 	}
 }

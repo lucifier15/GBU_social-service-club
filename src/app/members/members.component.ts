@@ -23,11 +23,11 @@ export class MembersComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-  	this.memberService.addMember(form.value.name, form.value.roll_no, form.value.post)
-  	.subscribe(
-  		response => console.log(response),
-  		error =>console.log(error)
-  		);
+  	this.memberService.addMember(form.value.name, form.value.roll_no, form.value.post, form.value.photo)
+    .subscribe(
+      response => console.log(response),
+      error =>console.log(error)
+    );
   }
 
 }

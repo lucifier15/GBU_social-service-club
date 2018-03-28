@@ -9,6 +9,7 @@ import { PostEventComponent } from './post-event/post-event.component';
 import { EventComponent } from './event/event.component';
 import { AboutComponent } from './about/about.component';
 import { TeamComponent } from './team/team.component';
+import { ParticipantsComponent } from './participants/participants.component';
 
 export const router:Routes = [
 	{ path: '', redirectTo: 'welcome', pathMatch: 'full'},
@@ -19,6 +20,7 @@ export const router:Routes = [
 	{ path: 'admin-panel', component: AdminPanelComponent },
 	{ path: 'admin-panel/members', component: MembersComponent },
 	{ path: 'admin-panel/post-event', component: PostEventComponent },
+	{ path: 'admin-panel/participants', component: ParticipantsComponent }
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);

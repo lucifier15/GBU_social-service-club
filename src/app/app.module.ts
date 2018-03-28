@@ -24,6 +24,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { EventComponent } from './event/event.component';
 import { AboutComponent } from './about/about.component';
 import { TeamComponent } from './team/team.component';
+import { ParticipantsComponent } from './participants/participants.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { TeamComponent } from './team/team.component';
     WelcomeComponent,
     EventComponent,
     AboutComponent,
-    TeamComponent
+    TeamComponent,
+    ParticipantsComponent
   ],
   imports: [
     BrowserModule,

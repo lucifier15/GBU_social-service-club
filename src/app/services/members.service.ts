@@ -8,9 +8,9 @@ export class MembersService{
 
 	constructor(private http: Http){}
 
-	addMember(name: string,roll_no: string,post: string){
+	addMember(name: string,roll_no: string,post: string,photo: any){
 		return this.http.post('http://127.0.0.1:8000/api/addMember',
-		{name: name,roll_no: roll_no,post: post},
+		{name: name,roll_no: roll_no,post: post,photo: photo},
 		{headers: new Headers({'X-Requested-With': 'XMLHttpRequest'})});
 	}
 
