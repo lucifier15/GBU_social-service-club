@@ -24,8 +24,4 @@ export class WelcomeComponent implements OnInit {
   	 );
   }
 
-  getEvent(){
-    console.log('got event');
-  }
-
 }

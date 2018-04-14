@@ -1,4 +1,8 @@
-<div class="members">
+<div *ngIf="!t">
+	<app-admin-signin></app-admin-signin>
+</div>
+
+<div class="members"  *ngIf="t">
 
 	<div class="col-md-12 row">
 
@@ -28,9 +32,6 @@
 						<option value="gs">G.S.</option>
 						<option value="manager">Manager</option>
 					</select>
-				</div>
-				<div class="form-group">
-					<input type="file" name="photo" name="photo" ngModel>
 				</div>
 				<button type="submit">Submit</button>
 			</form>

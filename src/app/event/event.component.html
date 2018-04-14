@@ -1,32 +1,32 @@
 <!-- event starts -->
 	<div class="container row event" *ngFor="let event of event">
-		<div class="container">
-			<h4>{{event.title}}{{event.date}}{{event.venue}}</h4>
-
+		<div class="container details">
+			<h2>{{event.title}}</h2>
+			<p>{{event.venue}}  {{event.date}}</p>
 		</div>
 		<div class="col-md-1"></div>	
-		<div class="col-md-7">
+		<div class="col-md-7 rules">
 			<div>
 				<h4>Guidelines & Rules</h4>
 			</div>
 			<div>
 				<ul>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+					<li *ngIf="event.rule1!=NULL">{{event.rule1}}</li>
+					<li *ngIf="event.rule2!=NULL">{{event.rule2}}</li>
+					<li *ngIf="event.rule3!=NULL">{{event.rule3}}</li>
+					<li *ngIf="event.rule4!=NULL">{{event.rule4}}</li>
+					<li *ngIf="event.rule5!=NULL">{{event.rule5}}</li>
+					<li *ngIf="event.rule6!=NULL">{{event.rule6}}</li>
+					<li *ngIf="event.rule7!=NULL">{{event.rule7}}</li>
+					<li *ngIf="event.rule8!=NULL">{{event.rule8}}</li>
+					<li *ngIf="event.rule9!=NULL">{{event.rule9}}</li>
+					<li *ngIf="event.rule10!=NULL">{{event.rule10}}</li>
 				</ul>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div>
-				<h4>Register Here{{event.id}}</h4>
+				<h4>Register Here</h4>
 			</div>
 			<div class="rgForm">
 				<form (ngSubmit)="onSubmit(form)" #form="ngForm">
@@ -68,7 +68,7 @@
 
 					<div class="form-group">
 						<input class="form-control" type="email" name="email" placeholder="E-MAIL" [(ngModel)]="form.email" #email="ngModel" required>
-						<a style="color: blue;" (click)="sendOtp(email)">Send Otp</a>
+						<span class="pointer" (click)="sendOtp(email)">Send Otp</span>
 					</div>
 					<!-- email validation -->
 					<div *ngIf="email.invalid && (email.dirty || email.touched)">
@@ -90,6 +90,7 @@
 						</p>
 					</div>
 					<button type="submit" [(disabled)]="!form.valid" mat-button>Register</button>
+					<span style="color: green;">{{message}}</span>
 				</form>
 			</div>
 		</div>

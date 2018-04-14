@@ -4,6 +4,7 @@ import { EventsService } from '../services/events.service';
 import { Events } from '../../interfaces.interface';
 import { ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { ResponseOptions } from '@angular/http';
 
 @Component({
   selector: 'app-event',
@@ -17,6 +18,9 @@ export class EventComponent implements OnInit {
   private sub: any;
   name : string;
   otp: number;
+  email: string;
+  message : any;
+  code: number;
   constructor(private eventsService: EventsService,private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -34,25 +38,29 @@ export class EventComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    
-    if(form.value.otp==this.otp){
     this.eventsService.register(form.value.name, form.value.roll_no, form.value.phone, form.value.email, form.value.otp, this.id)
     .subscribe(
       response => console.log(response),
       error => console.log(error)
     );
+
+  }
+  sendOtp(email){
+
+    if(email.value == null){
+      this.message = 'email is required';
     }
     else{
-      console.log('invalid otp');
+      this.message = 'otp sent';
     }
-  }
-
-  sendOtp(email){
     this.eventsService.sendOtp(email.value)
      .subscribe(
-        (otp: number) => this.otp = otp,
+        response => console.log(response),
         error => console.log(error)
+        
      );
+
+    this.email = email.value;
   }
 
   ngOnDestroy() {

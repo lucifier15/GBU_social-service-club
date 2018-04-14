@@ -5,3 +5,8 @@
 .eventCard{
 	margin-bottom: 10px;
 }
+
+.pointer{
+	cursor: pointer;
+	color: red;
+}

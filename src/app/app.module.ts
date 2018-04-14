@@ -20,11 +20,13 @@ import { MembersComponent } from './members/members.component';
 import { PostEventComponent } from './post-event/post-event.component';
 import { MembersService } from './services/members.service';
 import { EventsService } from './services/events.service';
+import { AuthService } from './services/auth.service';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { EventComponent } from './event/event.component';
 import { AboutComponent } from './about/about.component';
 import { TeamComponent } from './team/team.component';
 import { ParticipantsComponent } from './participants/participants.component';
+import { AdminSigninComponent } from './admin-signin/admin-signin.component';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { ParticipantsComponent } from './participants/participants.component';
     EventComponent,
     AboutComponent,
     TeamComponent,
-    ParticipantsComponent
+    ParticipantsComponent,
+    AdminSigninComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +62,8 @@ import { ParticipantsComponent } from './participants/participants.component';
   ],
   providers: [
     MembersService,
-    EventsService
+    EventsService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

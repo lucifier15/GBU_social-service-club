@@ -6,7 +6,7 @@
 	<div>
 		<div class="col-md-4" *ngFor="let event of events">
 			<a [routerLink]="['event',event.id]">
-				<mat-card class="event" (click)="getEvent()">
+				<mat-card class="event">
 					<h4>{{event.title}}</h4>
 					<p>{{event.date}}</p>
 					<p>{{event.venue}}</p>

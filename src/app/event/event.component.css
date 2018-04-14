@@ -2,6 +2,16 @@
 	padding: 20px;
 }
 
+.details h2{
+	text-align: center;
+}
+
+.details p{
+	text-align: center;
+	padding-bottom: 40px;
+	color: #031217;
+}
+
 .rgForm{
 	box-shadow: grey 5px 5px 5px 5px;
 	padding: 15px;
@@ -9,4 +19,13 @@
 
 p{
 	color: red;
+}
+
+.rules ul li{
+	font-size: 18px;
+}
+
+.pointer{
+	cursor: pointer;
+	color: #3176B2;
 }

@@ -1,5 +1,9 @@
 <!-- participants list start -->
-		<div class="container">
+		<div *ngIf="!t">
+			<app-admin-signin></app-admin-signin>
+		</div>
+
+		<div class="container" *ngIf="t">
 			<router-outlet>
 				<div>
 					<h4>Event : Painting</h4>
