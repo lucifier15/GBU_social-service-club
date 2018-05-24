@@ -29,3 +29,7 @@ p{
 	cursor: pointer;
 	color: #3176B2;
 }
+
+small{
+	color: red;
+}

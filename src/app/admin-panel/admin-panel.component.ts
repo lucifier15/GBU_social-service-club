@@ -13,6 +13,9 @@ export class AdminPanelComponent implements OnInit {
   t: string;
 
   ngOnInit() {
+  	this.authService.getIp().subscribe(data => {
+      console.log(data);
+    });
   	const token = this.authService.getToken();
     this.t = token;
   }

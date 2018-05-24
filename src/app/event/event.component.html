@@ -2,7 +2,7 @@
 	<div class="container row event" *ngFor="let event of event">
 		<div class="container details">
 			<h2>{{event.title}}</h2>
-			<p>{{event.venue}}  {{event.date}}</p>
+			<p>{{event.venue}},  {{event.date | date: 'EEEE dd-MM-yyyy'}}</p>
 		</div>
 		<div class="col-md-1"></div>	
 		<div class="col-md-7 rules">
@@ -92,6 +92,9 @@
 					<button type="submit" [(disabled)]="!form.valid" mat-button>Register</button>
 					<span style="color: green;">{{message}}</span>
 				</form>
+			</div>
+			<div>
+				<small>If you have any trouble registering for an event drop a message in the <a href="http://18.217.242.213/#contact">contact us</a> section </small>
 			</div>
 		</div>
 	</div>

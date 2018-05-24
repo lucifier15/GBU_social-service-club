@@ -38,24 +38,35 @@ export class EventComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    this.eventsService.register(form.value.name, form.value.roll_no, form.value.phone, form.value.email, form.value.otp, this.id)
-    .subscribe(
-      response => console.log(response),
-      error => console.log(error)
-    );
 
+    if(form.value.email == this.email && form.value.otp == this.otp){
+      this.eventsService.register(form.value.name, form.value.roll_no, form.value.phone, form.value.email, form.value.otp, this.id)
+      .subscribe(
+        response => this.code =response.status,
+        error => this.code = error.status,
+       );
+       setTimeout(()=>{
+          if(this.code == 409){
+            this.message = 'Already Registered';
+          }else if(this.code == 201){
+            this.message = 'Registered Succesfully';
+          }
+        },2500) 
+      }else{
+        this.message = 'invalid otp';
+      }
   }
   sendOtp(email){
 
     if(email.value == null){
-      this.message = 'email is required';
+      alert('email is required');
     }
     else{
-      this.message = 'otp sent';
+      alert('otp is sent to your email');
     }
     this.eventsService.sendOtp(email.value)
      .subscribe(
-        response => console.log(response),
+        response => this.otp = response,
         error => console.log(error)
         
      );

@@ -29,4 +29,9 @@ export class AuthService{
 	getToken(){
 		return localStorage.getItem('token');
 	}
+
+	getIp(){
+		return this.http.get('http://freegeoip.net/json/?callback')
+            .map(response => response || {});
+	}
 }

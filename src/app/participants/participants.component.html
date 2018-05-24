@@ -5,27 +5,47 @@
 
 		<div class="container" *ngIf="t">
 			<router-outlet>
-				<div>
-					<h4>Event : Painting</h4>
-					<table>
-						<tr>
-							<th>S.No</th>
-							<th>Name</th>
-							<th>Registration No</th>
-							<th>Email</th>
-							<th>Contact No</th>
-							<th>Event Id</th>
-						</tr>
-						<tr *ngFor="let part of participants">
-							<td>{{part.id}}.</td>
-							<td>{{part.name}}</td>
-							<td>{{part.roll_no}}</td>
-							<td>{{part.email}}</td>
-							<td>{{part.phone}}</td>
-							<td>{{part.eventId}}</td>
-						</tr>
-					</table>
+				<div class="col-md-12">
+					<div class="col-md-8">
+						<h4>Participants List</h4>
+						<table>
+							<tr>
+								<th>S.No</th>
+								<th>Name</th>
+								<th>Registration No</th>
+								<th>Email</th>
+								<th>Contact No</th>
+								<th>Event Id</th>
+							</tr>
+							<tr *ngFor="let part of participants">
+								<td>{{part.id}}.</td>
+								<td>{{part.name}}</td>
+								<td>{{part.roll_no}}</td>
+								<td>{{part.email}}</td>
+								<td>{{part.phone}}</td>
+								<td>{{part.eventId}}</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col-md-4">
+						<h4>Event List</h4>
+						<table>
+							<tr>
+								<th>Event Id</th>
+								<th>Event Title</th>
+								<th>Date</th>
+								<th>Venue</th>
+							</tr>
+							<tr *ngFor="let event of events">
+								<td>{{event.id}}</td>
+								<td>{{event.title}}</td>
+								<td>{{event.date}}</td>
+								<td>{{event.venue}}</td>
+							</tr>
+						</table>
+					</div>
 				</div>
+				
 			</router-outlet>
 		</div>
 <!-- participants list end -->
